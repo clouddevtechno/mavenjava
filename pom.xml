@@ -7,28 +7,33 @@
   <name>WAR Web Project</name>
   <description>A very simple Maven-enabled WAR web project</description>
   <dependencies>
-  	<dependency>
-  		<groupId>com.google.code.gson</groupId>
-  		<artifactId>gson</artifactId>
-  		<version>2.3.1</version>
-  	</dependency>
-  	<dependency>
-  		<groupId>javax.ws.rs</groupId>
-  		<artifactId>javax.ws.rs-api</artifactId>
-  		<version>2.0.1</version>
-  		<scope>provided</scope>
-  	</dependency>
+    <dependency>
+      <groupId>com.google.code.gson</groupId>
+      <artifactId>gson</artifactId>
+      <version>2.3.1</version>
+    </dependency>
+    <dependency>
+      <groupId>javax.ws.rs</groupId>
+      <artifactId>javax.ws.rs-api</artifactId>
+      <version>2.0.1</version>
+      <scope>provided</scope>
+    </dependency>
   </dependencies>
   <build>
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.1</version>
+        <version>3.8.1</version> <!-- Updated version -->
         <configuration>
-          <source>8</source>
-          <target>8</target>
+          <source>8</source> <!-- Use 11 if your project supports it -->
+          <target>8</target> <!-- Use 11 if your project supports it -->
         </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>3.3.2</version> <!-- Added Maven War Plugin -->
       </plugin>
     </plugins>
   </build>
