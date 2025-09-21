@@ -1,11 +1,20 @@
-version: 0.1
+version: 0.2
 
 phases:
+  pre_build:
+    commands:
+      - echo Nothing to do in the pre_build phase...
   build:
+    commands:
+      - echo Build started on `date`
+      - mvn clean install
+  post_build:
     commands:
       - echo Build completed on `date`
       - mvn package
+      - mv target/webfile-latest.war webfile-latest.war
 
 artifacts:
   files:
-    - '**/*'
+    - webfile-latest.war
+    - .ebextensions/**/*
