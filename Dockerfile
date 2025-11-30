@@ -1,6 +1,5 @@
-FROM openjdk:8-jdk-alpine
-WORKDIR /deploy
-COPY target/webfile-latest.war .
+FROM tomcat:8.5-jdk8-openjdk
+RUN rm -rf /usr/local/tomcat/webapps/*
+COPY target/webfile-latest.war /usr/local/tomcat/webapps/ROOT.war
 EXPOSE 8080
-ENTRYPOINT ["java", "-jar", "webfile-latest.war"]
-
+CMD ["catalina.sh", "run"]
